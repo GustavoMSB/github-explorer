@@ -3,8 +3,14 @@ import { RepositoryItem } from "../RepositoryItem";
 import { Row } from 'react-bootstrap';
 import { Container } from "./styles";
 
+interface Repository {
+  name: string;
+  description: string;
+  html_url: string;
+}
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
   
   useEffect(()=> {
     fetch('https://api.github.com/users/gustavomsb/repos')

@@ -1,6 +1,15 @@
 import { Col } from 'react-bootstrap';
 import { Content } from './styles';
-export function RepositoryItem(props) {
+
+interface RepositoryItemProps {
+  repository:{
+    name: string,
+    description: string,
+    html_url: string,
+  }
+}
+
+export function RepositoryItem( props: RepositoryItemProps ) {
   return (
       <Col md={4} xs={6}>
         <Content>
